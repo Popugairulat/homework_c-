@@ -9,7 +9,7 @@ int func(int arr[], int N, int n) {
 		i += 1;
 	}
 	int j = i;
-	if (arr[i] = n) {
+	if (arr[i] == n) {
 		while (j > 0) {
 			arr[j] = arr[j - 1];
 			j -= 1;
