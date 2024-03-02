@@ -21,7 +21,7 @@ int binarn(int start, int end, int n) {
 int func(int arr[], int N, int n) {
 	int start = 0, end = N - 1;
 	int i = end;
-	//скомбинируем линейный и бинарный поиск 
+	//???????????? ???????? ? ???????? ????? 
 	while (arr[start] + arr[i] != n and start < end) {
 		i = binarn(start + 1, end, n - arr[start]);
 		if (i == -1) {
