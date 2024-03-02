@@ -13,6 +13,7 @@ int func(int arr[], int N, int n) {
 		else
 			end = ((end + start)) / 2;
 	}
+
 	if (n > arr[end])
 		end = 0;
 	return end;
