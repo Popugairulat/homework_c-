@@ -1,6 +1,6 @@
 #include <iostream>
 #include <chrono>
-const int N = 5500;
+const int N = 100;
 int arr[N];
 
 int func(int arr[], int N, int n) {
@@ -10,6 +10,8 @@ int func(int arr[], int N, int n) {
 		while (j < N and arr[i] + arr[j] != n) {
 			j += 1;
 		}
+		if (arr[i] + arr[j] == n)
+			break;
 		i += 1;
 		j = i + 1;
 	}
@@ -25,8 +27,8 @@ int main() {
 	}
 	for (int i = 0; i < 20; ++i) {
 		auto begin = std::chrono::steady_clock::now();
-		for (unsigned cnt = 1000; cnt != 0; --cnt)
-			func(arr, N, rand() * rand() % (2 * N - 1));
+		for (unsigned cnt = 100000; cnt != 0; --cnt)
+			func(arr, N, rand() * rand() % N);
 		auto end = std::chrono::steady_clock::now();
 		auto time_span =
 			std::chrono::duration_cast<std::chrono::milliseconds>(end - begin);
